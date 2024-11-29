@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+
+function BootCLI(): void
+{
+    //require __DIR__ . '/../vendor/autoload.php';
+    require_once dirname(__DIR__, 3) . '/autoload.php';
+
+    try {
+        $application = new Application('ModulesPress CLI', '0.0.1');
+
+        $application->add(new \ModulesPressCLI\Commands\NewCommand());
+        $application->add(new \ModulesPressCLI\Commands\PackageCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeModuleCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeProviderCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeInterceptorCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeCheckCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeFilterCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeGuardCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakePipeCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeMiddlewareCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeControllerCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeCPTCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeTaxonomyCommand());
+        $application->add(new \ModulesPressCLI\Commands\MakeRepositoryCommand());
+
+        $application->run();
+    } catch (Throwable $e) {
+        echo "\n❌ Fatal Error: " . $e->getMessage() . "\n\n";
+        exit(1);
+    }
+}
+
+BootCLI();

@@ -1,0 +1,43 @@
+{
+    "name": "modulespress/cli",
+    "description": "Official CLI for ModulesPress Framework",
+    "type": "library",
+    "keywords": [
+        "modulespress",
+        "cli",
+        "wordpress",
+        "module",
+        "plugin",
+        "plugin development",
+        "plugin generator"
+    ],
+    "license": "MIT",
+    "homepage": "https://modulespress.devsroutes.co",
+    "version": "0.0.1",
+    "support": {
+        "issues": "https://github.com/devsroutes/modulespress-cli/issues",
+        "source": "https://github.com/devsroutes/modulespress-cli"
+    },
+    "autoload": {
+        "psr-4": {
+            "ModulesPressCLI\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/modulespress",
+        "bin/mp"
+    ],
+    "authors": [
+        {
+            "name": "Saad Nadeem",
+            "email": "saadnadeem@devsroutes.co"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^6.4",
+        "symfony/filesystem": "^6.4",
+        "symfony/finder": "^6.4",
+        "symfony/process": "^6.4"
+    }
+}
